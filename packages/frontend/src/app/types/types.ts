@@ -1,21 +1,28 @@
-export type Activity = {
-  id: string
-  userId: string
-  message: string
-  location: string
-  timestamp: string
+export interface Workout {
+  id: number
+  user: string
+  avatar: string
+  gym: string
+  time: string
+  content: string
   likes: number
+  cheers: number
   lat: number
   lng: number
 }
 
 export type ActivityMarkerProps = {
-  activity: Activity
-  onClick: (activity: Activity) => void
+  activity: Workout
+  onClick: (activity: Workout) => void
 }
 
-export type ActivityPopupProps = {
-  activity: Activity
+export type WorkoutPopupProps = {
+  activity: Workout
   onClose: () => void
   onLike: (id: string) => void
+}
+
+export interface NewPost {
+  content: string
+  gym: string
 }
